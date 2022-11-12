@@ -22,12 +22,10 @@ class MainMenuState extends MusicBeatState
 	public static var gameVer:String = '0.2.7.1';
 
 	private final optionShit:Array<String> = [
-		'story mode',
 		'freeplay',
 		#if FUTURE_POLYMOD
 		'mods',
 		#end
-		'credits',
 		'options'
 	];
 	private var menuItems:FlxTypedGroup<FlxSprite>;
@@ -102,7 +100,7 @@ class MainMenuState extends MusicBeatState
 			"Friday Night Funkin': "
 			+ gameVer
 			+ ' - '
-			+ 'Chain-Saw Engine: '
+			+ 'vs bave (chain saw engine) :  '
 			+ Application.current.meta.get('version')
 			+ nightly, 12);
 		versionShit.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
@@ -112,7 +110,7 @@ class MainMenuState extends MusicBeatState
 		changeItem();
 
 		#if mobile
-		addVirtualPad(UP_DOWN, A_B);
+		addVirtualPad(LEFT_RIGHT, A_B);
 		virtualPad.y -= 23;
 		#end
 
@@ -128,9 +126,9 @@ class MainMenuState extends MusicBeatState
 
 		if (!selectedSomething)
 		{
-			if (controls.UI_UP_P)
+			if (controls.UI_LEFT_P)
 				changeItem(-1);
-			else if (controls.UI_DOWN_P)
+			else if (controls.UI_RIGHT_P)
 				changeItem(1);
 			else if (FlxG.mouse.wheel != 0)
 				changeItem(-FlxG.mouse.wheel);
