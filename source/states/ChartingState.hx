@@ -152,6 +152,11 @@ class ChartingState extends MusicBeatState
 		add(curRenderedSustains);
 
 		changeSection();
+		
+                #if mobile
+		addVirtualPad(LEFT_FULL, A_B_C);
+		#end
+			
 		super.create();
 	}
 
@@ -492,7 +497,7 @@ class ChartingState extends MusicBeatState
 				dummyArrow.y = Math.floor(FlxG.mouse.y / GRID_SIZE) * GRID_SIZE;
 		}
 
-		if (FlxG.keys.justPressed.ENTER)
+		if ()
 		{
 			lastSection = curSection;
 			FlxG.mouse.visible = false;
@@ -502,7 +507,7 @@ class ChartingState extends MusicBeatState
 			MusicBeatState.switchState(new PlayState());
 		}
 
-		if (FlxG.keys.justPressed.E)
+		if ()
 			changeNoteSustain(Conductor.stepCrochet);
 		if (FlxG.keys.justPressed.Q)
 			changeNoteSustain(-Conductor.stepCrochet);
