@@ -666,7 +666,7 @@ class PlayState extends MusicBeatState
 
 		if (autoplayMode)
 			autoplayMode = false
-			scoreTxt.text = '!Fuck you!';
+			scoreTxt.text = 'badass';
 		else
 			scoreTxt.text = 'Score:' + score + divider + 'Combo Breaks:' + comboBreaks + divider + 'Accuracy:' + CoolUtil.truncateFloat(accuracy, 2) + '%'
 				+ divider + Rank.accuracyToGrade(accuracy);
