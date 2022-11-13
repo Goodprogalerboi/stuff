@@ -20,6 +20,7 @@ class OptionsState extends MusicBeatState
 		'Mobile Controls',
 		#end
 		'Controls',
+		'Test Song',
 		'Exit'
 	];
 
@@ -127,9 +128,12 @@ class OptionsState extends MusicBeatState
 			#if mobile
 			case 'Mobile Controls':
 				openSubState(new mobile.MobileControlsSubState());
+			case 'Controls':
+				
 			#end
 			case 'Controls':
 				openSubState(new ControlsSubState());
+			
 			case 'Exit':
 				if (fromPause)
 				{
