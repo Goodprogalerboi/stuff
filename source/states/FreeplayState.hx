@@ -121,14 +121,14 @@ class FreeplayState extends MusicBeatState
 		add(rankText);
 
 		diffText = new FlxText(scoreText.x, rankText.y + 28, 0, '', 24);
-		diffText.setFormat(Paths.font('vcr.ttf'), 24, FlxColor.WHITE, RIGHT);
+		diffText.setFormat(Paths.font('vcr.ttf'), 24, FlxColor.BLACK, RIGHT);
 		add(diffText);
 
 		changeSelection();
 		changeDiff();
 
 		#if mobile
-		addVirtualPad(LEFT_FULL, A_B_C);
+		addVirtualPad(UP_DOWN, A_B_C);
 		#end
 
 		super.create();
