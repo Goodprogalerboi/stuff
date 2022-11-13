@@ -497,7 +497,7 @@ class ChartingState extends MusicBeatState
 				dummyArrow.y = Math.floor(FlxG.mouse.y / GRID_SIZE) * GRID_SIZE;
 		}
 
-		if (controls.UI_A_P)
+		if (controls.ACCEPT)
 		{
 			lastSection = curSection;
 			FlxG.mouse.visible = false;
@@ -530,7 +530,7 @@ class ChartingState extends MusicBeatState
 
 		if (!typingShit.hasFocus)
 		{
-			if (controls.UI_B_P)
+			if (controls.BACK)
 			{
 				if (FlxG.sound.music.playing)
 				{
@@ -544,7 +544,7 @@ class ChartingState extends MusicBeatState
 				}
 			}
 
-			if (controls.UI_C_P)
+			if (virtualPad.buttonC.pressed)
 			{
 				if (FlxG.keys.pressed.SHIFT)
 					resetSection(true);
@@ -561,9 +561,9 @@ class ChartingState extends MusicBeatState
 				vocals.time = FlxG.sound.music.time;
 			}
 
-			if (controls.UI_B_P)
+			if (controls.BACK)
 			{
-				if (controls.UI_C_P)
+				if (virtualPad.buttonC.pressed)
 				{
 					FlxG.sound.music.pause();
 					vocals.pause();
@@ -580,7 +580,7 @@ class ChartingState extends MusicBeatState
 			}
 			else
 			{
-				if (controls.UI_C_P)
+				if (virtualPad.buttonC.pressed)
 				{
 					FlxG.sound.music.pause();
 					vocals.pause();
