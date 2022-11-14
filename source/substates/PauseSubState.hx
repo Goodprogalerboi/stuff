@@ -24,8 +24,7 @@ class PauseSubState extends MusicBeatSubstate
 		'Change Difficulty',
 		'Toggle Practice Mode',
 		'Toggle Auto-Play Mode',
-		'animationDebug1',
-		'animationDebug2',
+		'Reset Death Count',
 		'Chart Editor',
 		'Options',
 		'Quit'
@@ -192,10 +191,8 @@ class PauseSubState extends MusicBeatSubstate
 						MusicBeatState.switchState(new StoryMenuState());
 					else
 						MusicBeatState.switchState(new FreeplayState());
-				case "animationDebug1":
-					MusicBeatState.switchState(new AnimationDebug(SONG.player2));
-				case "animationDebug2":
-					MusicBeatState.switchState(new AnimationDebug(SONG.player1));
+				case 'Reset Death Count'
+					
 				case 'Chart Editor':
 					MusicBeatState.switchState(new ChartingState());
 				case 'Options':
