@@ -71,8 +71,8 @@ class PlayState extends MusicBeatState
 	private var hitNotes:Float = 0;
 	private var totalNotes:Float = 0;
 	private var maxSongPos:Int = 3000;
-	private var minHealth:Int = 0;
-	private var maxHealth:Int = 2;
+	private var minHealth:Int = -1;
+	private var maxHealth:Int = 3;
 	private var paused:Bool = false;
 	private var startedCountdown:Bool = false;
 	private var canPause:Bool = true;
@@ -85,7 +85,7 @@ class PlayState extends MusicBeatState
 	private var camFollowDad:Array<Float> = [0, 0];
 	private var camFollowBoyfriend:Array<Float> = [0, 0];
 	private var dialogue:Array<String> = ['dad:blah blah blah', 'bf:coolswag'];
-	private var health:Float = 1;
+	private var health:Float = 1.5;
 	private var notes:FlxTypedGroup<Note>;
 	private var vocals:FlxSound;
 
@@ -665,8 +665,7 @@ class PlayState extends MusicBeatState
 		super.update(elapsed);
 
 		if (autoplayMode)
-			autoplayMode = false
-			scoreTxt.text = 'badass';
+			scoreTxt.text = 'auto-play-Mode';
 		else
 			scoreTxt.text = 'Score:' + score + divider + 'Combo Breaks:' + comboBreaks + divider + 'Accuracy:' + CoolUtil.truncateFloat(accuracy, 2) + '%'
 				+ divider + Rank.accuracyToGrade(accuracy);
