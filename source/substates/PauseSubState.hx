@@ -191,7 +191,7 @@ class PauseSubState extends MusicBeatSubstate
 						MusicBeatState.switchState(new StoryMenuState());
 					else
 						MusicBeatState.switchState(new FreeplayState());
-				case 'Reset Death Count';
+				case 'Reset Death Count':
 					PlayState.deathCounter = 0;
 				case 'Chart Editor':
 					MusicBeatState.switchState(new ChartingState());
