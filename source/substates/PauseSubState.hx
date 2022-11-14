@@ -12,6 +12,7 @@ import parse.Song;
 import states.ChartingState;
 import states.FreeplayState;
 import states.OptionsState;
+import states.AnimationDebug;
 import states.PlayState;
 import states.StoryMenuState;
 
