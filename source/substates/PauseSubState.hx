@@ -23,6 +23,8 @@ class PauseSubState extends MusicBeatSubstate
 		'Change Difficulty',
 		'Toggle Practice Mode',
 		'Toggle Auto-Play Mode',
+		'animationDebug1',
+		'animationDebug2',
 		'Chart Editor',
 		'Options',
 		'Quit'
