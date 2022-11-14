@@ -85,7 +85,7 @@ class PlayState extends MusicBeatState
 	private var camFollowDad:Array<Float> = [0, 0];
 	private var camFollowBoyfriend:Array<Float> = [0, 0];
 	private var dialogue:Array<String> = ['dad:blah blah blah', 'bf:coolswag'];
-	private var health:Float = 1.5;
+	private var health:Float = 1;
 	private var notes:FlxTypedGroup<Note>;
 	private var vocals:FlxSound;
 
@@ -617,7 +617,7 @@ class PlayState extends MusicBeatState
 	#if FUTURE_DISCORD_RCP
 	override public function onFocus():Void
 	{
-		if (health > 0 && !paused)
+		if (health > -1 && !paused)
 		{
 			if (Conductor.songPosition > 0.0)
 				DiscordClient.changePresence(detailsText, SONG.song
@@ -691,7 +691,7 @@ class PlayState extends MusicBeatState
 		iconP2.updateHitbox();
 		iconP2.x = healthBar.x + (healthBar.width * (FlxMath.remapToRange(healthBar.percent, 0, 100, 100, 0) * 0.01)) - (iconP2.width - iconOffset);
 
-		if (health > maxHealth)
+		if (health > 3)
 			health = maxHealth;
 
 		updateIcons();
@@ -726,7 +726,7 @@ class PlayState extends MusicBeatState
 			if (controls.RESET && startedCountdown)
 				health = minHealth;
 
-			if (health <= minHealth && !practiceMode)
+			if (health <= -1 && !practiceMode)
 				gameOver();
 		}
 
