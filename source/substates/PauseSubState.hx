@@ -192,6 +192,10 @@ class PauseSubState extends MusicBeatSubstate
 						MusicBeatState.switchState(new StoryMenuState());
 					else
 						MusicBeatState.switchState(new FreeplayState());
+				case "animationDebug1":
+					MusicBeatState.switchState(new AnimationDebug(SONG.player2));
+				case "animationDebug2":
+					MusicBeatState.switchState(new AnimationDebug(SONG.player1));
 				case 'Chart Editor':
 					MusicBeatState.switchState(new ChartingState());
 				case 'Options':
