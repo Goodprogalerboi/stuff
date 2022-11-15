@@ -1377,7 +1377,6 @@ class PlayState extends MusicBeatState
 			altAnim = '-alt';
 
 		if (dad.animation.getByName(dad.singAnimations[Std.int(Math.abs(daNote.noteData) % 4)] + altAnim) != null)
-			
 			dad.playAnim(dad.singAnimations[Std.int(Math.abs(daNote.noteData) % 4)] + altAnim, true);
 
 		dad.holdTimer = 0;
