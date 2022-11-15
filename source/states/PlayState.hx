@@ -1282,7 +1282,7 @@ class PlayState extends MusicBeatState
 		if (health <= minHealth && (practiceMode || autoplayMode))
 			health = minHealth;
 		else
-			health -= 0.04;
+			health -= 0.1
 
 		totalNotes++;
 
@@ -1335,7 +1335,7 @@ class PlayState extends MusicBeatState
 			}
 
 			if (daNote.noteData >= 0)
-				health += 0.023;
+				health += 0.040;
 			else
 				health += 0.004;
 
@@ -1377,6 +1377,7 @@ class PlayState extends MusicBeatState
 			altAnim = '-alt';
 
 		if (dad.animation.getByName(dad.singAnimations[Std.int(Math.abs(daNote.noteData) % 4)] + altAnim) != null)
+			
 			dad.playAnim(dad.singAnimations[Std.int(Math.abs(daNote.noteData) % 4)] + altAnim, true);
 
 		dad.holdTimer = 0;
