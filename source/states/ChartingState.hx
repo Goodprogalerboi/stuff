@@ -154,7 +154,7 @@ class ChartingState extends MusicBeatState
 		changeSection();
 		
                 #if mobile
-		addVirtualPad(LEFT_FULL, A_B_C);
+		addVirtualPad(LEFT_FULL, A_B_C_D);
 		#end
 			
 		super.create();
@@ -530,7 +530,7 @@ class ChartingState extends MusicBeatState
 
 		if (!typingShit.hasFocus)
 		{
-			if (controls.BACK)
+			if (virtualPad.buttonC.pressed)
 			{
 				if (FlxG.sound.music.playing)
 				{
@@ -561,9 +561,9 @@ class ChartingState extends MusicBeatState
 				vocals.time = FlxG.sound.music.time;
 			}
 
-			if (controls.BACK)
+			if (virtualPad.buttonD.pressed)
 			{
-				if (virtualPad.buttonC.pressed)
+				if (virtualPad.buttonD.pressed)
 				{
 					FlxG.sound.music.pause();
 					vocals.pause();
@@ -580,14 +580,14 @@ class ChartingState extends MusicBeatState
 			}
 			else
 			{
-				if (virtualPad.buttonC.pressed)
+				if (virtualPad.buttonD.pressed)
 				{
 					FlxG.sound.music.pause();
 					vocals.pause();
 
 					var daTime:Float = Conductor.stepCrochet * 2;
 
-					if (controls.UI_UP_P)
+					if (controls.UI_DOWN_P)
 						FlxG.sound.music.time -= daTime;
 					else
 						FlxG.sound.music.time += daTime;
@@ -600,7 +600,7 @@ class ChartingState extends MusicBeatState
 		_song.bpm = tempBpm;
 
 		var shiftThing:Int = 1;
-		if (FlxG.keys.pressed.SHIFT)
+		if (controls.BACK)
 			shiftThing = 4;
 		if (controls.UI_RIGHT_P)
 			changeSection(curSection + shiftThing);
