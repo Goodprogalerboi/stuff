@@ -1284,7 +1284,6 @@ class PlayState extends MusicBeatState
 		else
 			health -= 0.1
 
-		totalNotes++;
 
 		if (combo > 5 && gf.animation.getByName('sad') != null)
 			gf.playAnim('sad');
